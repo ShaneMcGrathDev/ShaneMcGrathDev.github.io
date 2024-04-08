@@ -102,7 +102,7 @@ df2 = pd.read_excel('PredictedForecast.xlsx')
 ![Linear Regression Pic1]({{ "/assets/LinearPost1.jpg" | relative_url }})
 A view of the simple training data set: existing x and y value pairs to establish the regression model
 
-![Linear Regression Pic2]({{ "/assets/LinearPost2.jpg" | relative_url }})
+![Linear Regression Pic2]({{ "/assets/LinearPostX.jpg" | relative_url }})
 Prediction file with only the x values we are looking to predict the y for
 
 # Step 3: Store DataFrame columns as arrays to be used as regression variables
@@ -228,7 +228,7 @@ print('DataFrame is written successfully to Excel File.')
 
 This code stores our new prediction set into a DataFrame column named “Prediction” in our existing DataFrame df2. This gives us an x and y value set in Excel format similar to the following:
 
-![Linear Regression Pic1]({{ "/assets/LinearPost4.jpg" | relative_url }})
+![Linear Regression Pic1]({{ "/assets/LinearPostPred.jpg" | relative_url }})
 The predicted y values with corresponding x variable
 
 Then, we write the the updated dataframe into the file path and save the file. From this point the file should be ready for use.
