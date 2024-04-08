@@ -18,7 +18,7 @@ This tutorial will walk you through how to make use of predictive analytics usin
 
 You will also see how flexible and versatile Python can be which will help you add new skills to your data skill stack.
 
-The business case for prediction
+## The business case for prediction
 
 When it comes to building data models for prediction, it helps to position these efforts in the context of business need and value.
 
@@ -34,7 +34,7 @@ Python is one of the most business friendly programming languages, and serves pr
 
 Combining business knowledge with a flexible predictive analytics capability is extremely powerful.
 
-Lesson goals and benefits
+## Lesson goals and benefits
 Now that we have some business context to set the stage for your predictive analytics efforts, we will walk through a method to set up a basic linear regression model in Python so you can start on the path of building your own models using Python.
 
 ## A few things we will cover:
@@ -53,11 +53,12 @@ Now that we have some business context to set the stage for your predictive anal
 
 ## What is Linear Regression?
 
-Linear regression is a fairly basic, beginner-friendly statistical prediction model
-The goal with linear regression is to optimize the fit between two variables, which can be calculated mathematically and graphed visually
-The independent variable x, drives a response dependent variable y
-With an observed set of x/y variable pairs, data can be trained to produce a regression model which can then in turn be used to predict future values
-Linear regression is not a perfect fit for every type of scenario and there are a multitude of other model variations, but it is still a useful model to learn and apply in the right scenarios.
+- Linear regression is a fairly basic, beginner-friendly statistical prediction model
+- The goal with linear regression is to optimize the fit between two variables, which can be calculated mathematically and graphed visually
+- The independent variable x, drives a response dependent variable y
+- With an observed set of x/y variable pairs, data can be trained to produce a regression model which can then in turn be used to predict future values
+- Linear regression is not a perfect fit for every type of scenario and there are a multitude of other model variations, but it is still a useful model to learn and apply in the right scenarios.
+
 I have used this model in my own work. The Excel data I use is monthly battery powered screwdriver placements and corresponding battery sales demand.
 
 The model example we’ll walk through was used in inventory forecasting to model the relationship between the battery powered screw driver(x) and how many batteries will be sold(y). Historical data was fed into the Python script to train the regression model, and then the model was applied to predict future values.
@@ -82,7 +83,7 @@ from scipy import stats
 from sklearn.linear_model import LinearRegression
 ```
 
-Step 2: Read your Excel files into Python for use
+# Step 2: Read your Excel files into Python for use
 To do this use the code below, and change the file paths to match yours. You can see a sampling of my training data below for context if you need it.
 
 The df and df2 are variables containing your Excel data sets, which are converted into a Python Pandas compatible data structure, called a DataFrame with the aid of the Python Pandas library.
@@ -91,9 +92,11 @@ DataFrames are how the Python Library Pandas stores your excel data for use and 
 
 Your data analysis does not need to end with the regression model we are building, you can keep exploring more applications.
 
+```
 #Step2: Read the Excel files into Python as DataFrames
 df = pd.read_excel('TrainingDataV2.xlsx')
 df2 = pd.read_excel('PredictedForecast.xlsx')
+```
 
 A view of the simple training data set: existing x and y value pairs to establish the regression model
 
