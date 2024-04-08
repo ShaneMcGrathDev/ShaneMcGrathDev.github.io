@@ -13,11 +13,13 @@ _Photo by [Photo by Ryan Stone on Unsplash]_ -->
 ![Linear Regression Pic]({{ "/assets/sample-image.jpg" | relative_url }}) Photo by Ryan Stone on Unsplash
 
 
+
+
 This tutorial will walk you through how to make use of predictive analytics using Python and Excel data in a beginner-friendly manner.
 
 You will also see how flexible and versatile Python can be which will help you add new skills to your data skill stack.
 
-## The business case for prediction
+## The business case for predictive analytics 
 
 When it comes to building data models for prediction, it helps to position these efforts in the context of business need and value.
 
@@ -85,7 +87,7 @@ from sklearn.linear_model import LinearRegression
 # Step 2: Read your Excel files into Python for use
 To do this use the code below, and change the file paths to match yours. You can see a sampling of my training data below for context if you need it.
 
-The df and df2 are variables containing your Excel data sets, which are converted into a Python Pandas compatible data structure, called a DataFrame with the aid of the Python Pandas library.
+The **df**  and **df2** are variables containing your Excel data sets, which are converted into a Python Pandas compatible data structure, called a DataFrame with the aid of the Python Pandas library.
 
 DataFrames are how the Python Library Pandas stores your excel data for use and manipulation. Once your data frame is established, you can do a massive variety of data analysis and manipulation using this data structure.
 
@@ -97,29 +99,38 @@ df = pd.read_excel('TrainingDataV2.xlsx')
 df2 = pd.read_excel('PredictedForecast.xlsx')
 ```
 
+![Linear Regression Pic1]({{ "/assets/LinearPost1.jpg" | relative_url }})
 A view of the simple training data set: existing x and y value pairs to establish the regression model
 
+![Linear Regression Pic2]({{ "/assets/LinearPost2.jpg" | relative_url }})
 Prediction file with only the x values we are looking to predict the y for
-Step 3: Store DataFrame columns as arrays to be used as regression variables
+
+# Step 3: Store DataFrame columns as arrays to be used as regression variables
 Now that you’ve established your DataFrame, you’ll store the columns from the files as arrays, another data structure which is a sequence of values of a similar data type (in our case integers), which will be used as your x and y variable inputs for your regression model.
 
-The x and y variables represent our existing data results, corresponding x and y pairs, which will be used to train our new prediction model.
+The **x** and **y** variables represent our existing data results, corresponding x and y pairs, which will be used to train our new prediction model.
 
-the new_x variable is the single column of x values, where we are looking to predict corresponding y values for.
+the **new_x** variable is the single column of x values, where we are looking to predict corresponding y values for.
 
 The bracketed names denote specific columns in the DataFrame which you can see match the column header names in the Excel table examples in step 2.
 
-Essentially we are plucking out columns from the DataFrame, originally from your Excel file, and using them as an array. The .values is what converts the DataFrame column to the different array data structure, one dimensional (1D) arrays.
+Essentially we are plucking out columns from the DataFrame, originally from your Excel file, and using them as an array. The **.values** is what converts the DataFrame column to the different array data structure, one dimensional (1D) arrays.
 
 Keep the 1D array in the back of your mind because we will convert it to a different data structure to build our model.
 
+```
 #Step 3: Convert the desired columns within the two dataframes into arrays to begin the regression model
 x = df['Driver Balance'].values
 y = df['Battery Demand'].values
 new_x = df2['QTY'].values
-Step 4: Calculate the regression and plot the variables and visualize them
+
+```
+
+# Step 4: Calculate the regression and plot the variables and visualize them
+
 Add this code next:
 
+```
 #Step 4: Regression calculations charting 
 #Plot the regression of x and y
 slope, intercept, r, p, std_err = stats.linregress(x, y)
@@ -134,6 +145,8 @@ def myfunc(x):
 
 #Store the linear equation as a variable for plotting purposes 
 mymodel = list(map(myfunc, x))
+```
+
 This code creates new variables which store the key measurements of the linear regression by using the stats module from the linear regression library.
 
 The first line accepts our x and y variables as inputs to calculate the slope, intercept, r, p, and standard error of the regression. Essentially this is the mathematical representation of our training data.
@@ -142,44 +155,65 @@ The next lines print out the r value when you run the code which displays in the
 
 For reference my training set has the following r value which is considered to be fairly strong correlation (0.8 or greater as a relative rule of thumb):
 
+![Linear Regression Pic1]({{ "/assets/LinearPost3.jpg" | relative_url }})
+
 
 The next code lines define a function which represents the linear regression which is then stored in the mymodel variable to prepare for plotting on the scatter plot.
 
 Next, let’s see the values visually on a scatter plot to see how the coordinates of the x and y variables are dispersed. This is accomplished using the matplotlib library:
 
+```
 plt.scatter(x, y)
 plt.plot(x, mymodel)
 plt.show()
+
+```
+
 This code produces a nice pop up visual chart of our linear regression where we can see our x and y values positioned on a scatter plot and see the line which best fits the value pairs.
 
+![Linear Regression Pic1]({{ "/assets/LinearPost4.jpg" | relative_url }})
 
-Step 5: Reshape the 1D arrays to 2D arrays
+
+# Step 5: Reshape the 1D arrays to 2D arrays
+
 Remember the 1D arrays we extracted from the DataFrame?
 
 In order to use our variables in the prediction library sklearn, it requires us to adjust our data structure. We use this code to adjust our 1D arrays to 2D arrays (known as reshaping): Think of a 2D array as a a row and column structured set of values (of a similar type), versus a single line. This reshaping is commonly needed in machine learning model development as well.
 
-#Step 5 Convert the variable values from 1D to 2D arrays so sklearn accepts it:
+```
+# Step 5 Convert the variable values from 1D to 2D arrays so sklearn accepts it:
 x = np.array(x).reshape(-1, 1)
 y = np.array(y).reshape(-1, 1)
 new_x = np.array(new_x).reshape(-1, 1)
-Step 6: Train the model
+```
+
+# Step 6: Train the model
+
 Next add this code to pass the x and y variables into the regression model and store as a variable.
 
+```
 #Step 6: Train your model on linear regression 
 model = LinearRegression()
 model.fit(x, y)
-Step 7: Apply the trained model to predict new values
+```
+
+# Step 7: Apply the trained model to predict new values
+
 Next, add this code block:
 
+```
 #Step 7: Use the model to predict new y values
 y_pred = model.predict(new_x)
-What we are doing here is generating our prediction values by feeding in our new_x values into our model. We now have a stored list of output values which we will write to excel for access and use.
+```
 
-Step 8: Write the prediction values to Excel
+What we are doing here is generating our prediction values by feeding in our **new_x** values into our model. We now have a stored list of output values which we will write to excel for access and use.
+
+# Step 8: Write the prediction values to Excel
 Now that we’ve passed our Excel values into Python, converted them to regression variables, visually charted our values, generated our prediction model, and predicted additional values, we can write our results into an Excel file.
 
 Add this code here (adjust your file names as needed):
 
+```
 # Step 8: Use your predicted ND Array output and turn it into an adjacent column in the dataframe where your X values you wanted predictions for is housed
 df2['Prediction'] = y_pred
 
@@ -190,13 +224,16 @@ df2.to_excel(writer)
 # save the excel
 writer.save()
 print('DataFrame is written successfully to Excel File.')
+```
+
 This code stores our new prediction set into a DataFrame column named “Prediction” in our existing DataFrame df2. This gives us an x and y value set in Excel format similar to the following:
 
-
+![Linear Regression Pic1]({{ "/assets/LinearPost4.jpg" | relative_url }})
 The predicted y values with corresponding x variable
+
 Then, we write the the updated dataframe into the file path and save the file. From this point the file should be ready for use.
 
-Wrap up
+# Wrap up
 Whew! We covered a lot of ground! My hope is this has given a good foundational taste for what is possible with data analysis, manipulation, and predictive modelling uses in Python.
 
 And never lose sight of the value of prediction in business!
