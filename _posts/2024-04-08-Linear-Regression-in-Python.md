@@ -5,12 +5,11 @@ date: 2024-04-08
 categories: Python, Linear Regression, Pandas, Forecasting
 ---
 
-# Build Your First Prediction Model in Python using Linear Regression
 
 <!-- ![Railroads]({{ "/assets/LinearPost.jpg" | relative_url }})
 _Photo by [Photo by Ryan Stone on Unsplash]_ -->
 
-![My helpful screenshot](/assets/LinearPost.jpg)
+![Blog Post Pic](/assets/LinearPost.jpg)
 
 
 
