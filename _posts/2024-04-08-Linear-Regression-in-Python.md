@@ -10,7 +10,7 @@ categories: Python, Linear Regression, Pandas, Forecasting
 _Photo by [Photo by Ryan Stone on Unsplash]_ -->
 
 <!-- ![Blog Post Pic3]({{ site.baseurl }}site/assets/LinearPost.jpg) -->
-![my inspiring image]({{ "/assets/sample-image.jpg" | relative_url }}) Photo by Ian Schneider
+![Linear Regression Pic]({{ "/assets/sample-image.jpg" | relative_url }}) Photo by Ryan Stone on Unsplash
 
 
 This tutorial will walk you through how to make use of predictive analytics using Python and Excel data in a beginner-friendly manner.
