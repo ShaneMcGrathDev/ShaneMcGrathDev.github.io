@@ -228,7 +228,7 @@ print('DataFrame is written successfully to Excel File.')
 
 This code stores our new prediction set into a DataFrame column named “Prediction” in our existing DataFrame df2. This gives us an x and y value set in Excel format similar to the following:
 
-![Linear Regression Pic1]({{ "/assets/LinearPostPred.jpg" | relative_url }})
+![Linear Regression Pic1]({{ "/assets/LinearPostPred.png" | relative_url }})
 The predicted y values with corresponding x variable
 
 Then, we write the the updated dataframe into the file path and save the file. From this point the file should be ready for use.
