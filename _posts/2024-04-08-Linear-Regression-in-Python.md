@@ -9,7 +9,7 @@ categories: Python, Linear Regression, Pandas, Forecasting
 <!-- ![Railroads]({{ "/assets/LinearPost.jpg" | relative_url }})
 _Photo by [Photo by Ryan Stone on Unsplash]_ -->
 
-![Blog Post Pic1](_site\assets\LinearPost.jpg)
+![Blog Post Pic2]({{ site.baseurl }}_site\assets\LinearPost.jpg)
 
 
 
