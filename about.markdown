@@ -4,9 +4,12 @@ title: About
 permalink: /about/
 ---
 
-My name is Shane McGrath, welcome to my portfolio page!
+# My name is Shane McGrath, welcome to my portfolio page!
 
-A little about me:
+![Linear Regression Pic1]({{ "/assets/Shane-With Dog.JPG" | relative_url }})
+
+
+## A little about me:
 
 - Eastern North Carolina Based
 - Currently a demand planning manager at Stryker, in the Craniomaxillofacial Division, a fortune 500 company 
