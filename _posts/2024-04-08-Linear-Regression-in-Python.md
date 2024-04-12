@@ -5,11 +5,6 @@ date: 2024-04-08
 categories: Python, Linear Regression, Pandas, Forecasting
 ---
 
-
-<!-- ![Railroads]({{ "/assets/LinearPost.jpg" | relative_url }})
-_Photo by [Photo by Ryan Stone on Unsplash]_ -->
-
-<!-- ![Blog Post Pic3]({{ site.baseurl }}site/assets/LinearPost.jpg) -->
 ![Linear Regression Pic]({{ "/assets/sample-image.jpg" | relative_url }}) Photo by Ryan Stone on Unsplash
 
 
