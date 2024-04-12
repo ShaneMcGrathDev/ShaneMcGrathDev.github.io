@@ -13,7 +13,7 @@ A great entrypoint is to set up your dataset with a datetime index, which sets t
 
 I'll walk you through how to do this using one library (Pandas) and a little baby data set which you can recreate that I made, shown here:
 
-![Data set time series]({{ "/assets/time_series_post_1.jpg" | relative_url }}) A view of my data set
+![Data set time series]({{ "/assets/times_series_post_1.jpg" | relative_url }}) A view of my data set
 
 ## How to set up the datetime index
 
