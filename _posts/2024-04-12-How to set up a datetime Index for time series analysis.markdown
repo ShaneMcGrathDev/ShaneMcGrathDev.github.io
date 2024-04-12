@@ -5,7 +5,12 @@ date: 2024-04-12
 categories: Pandas, time series analysis
 ---
 
-![Title pic]({{ "/assets/time_series_title_pic.jpg" | relative_url }}) Photo by Jon Tyson on Unsplash
+![Title pic]({{ "/assets/time_series_title_pic.jpg" | relative_url }})
+ Photo by Jon Tyson on Unsplash
+
+
+
+
 
 So, you're looking to analyze data dealing with time and you'd like to use Python. Maybe you're new to this style of analysis and not sure where to start. 
 
@@ -13,7 +18,8 @@ A great entrypoint is to set up your dataset with a datetime index, which sets t
 
 I'll walk you through how to do this using one library (Pandas) and a little baby data set which you can recreate that I made, shown here:
 
-![Data set time series]({{ "/assets/times_series_post_1.jpg" | relative_url }}) A view of my data set
+![Data set time series]({{ "/assets/times_series_post_1.jpg" | relative_url }}) 
+Example dataset 
 
 ## How to set up the datetime index
 
