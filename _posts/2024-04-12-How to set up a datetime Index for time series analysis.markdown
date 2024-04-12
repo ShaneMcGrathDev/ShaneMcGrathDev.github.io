@@ -56,11 +56,12 @@ print(time_series)
 This will show you the whole data set. You can also use head() and tail() to look at the top or bottom of a dataset as well, useful for bigger datasets, not so relevant with our mini data table in this example. 
 
 
-## A things to consider 
+## A few things to consider 
 
 - In my code example, column 0 happens to be the date index, but you can specify any column as the index by it's number (remember, your first column = 0 and not 1, this is called 0 based indexing)
-- You can read a CSV file in instead, just change the method to read_csv 
+- You can read a CSV file in instead, just change the method to **read_csv** 
 - Don't forget the file extension in the file name argument, otherwise the read in won't work
+- Change your file name as needed for your Excel file, I included my file name
 
 
 So if you stop here you're good to go and have created your time based index. But I want to cover two additional topics:
@@ -72,6 +73,17 @@ So if you stop here you're good to go and have created your time based index. Bu
 
 When you run the code we covered, your date column within your dataFrame becomes a new data type called **datetime64[ns]**
 
+You can confirm this by doing a print of your index as follows. 
+
+**Here's the code:**
+
+```
+print(time_series.index)
+```
+
+This code gives you a view of the columns which is available as it's own array, and also shows you the data type we discussed above as well as how the values are formatted. 
+
+
 This date type is useful to Python itself because it converts strings into a more efficient 64 bit integer which reduces memory burden and improves the speed of computation. The [ns] means the integer is measured down to the nanosecond level. Pretty cool stuff, and applicable in some industries such as finance and engineering. Who knows, maybe this is relevant to you! 
 
 This data type is useful to us as data analysts because it unlocks a massive amount of functionality including charting, slicing and dicing the data, resampling the data, and analyzing the data at different time scales. 
@@ -80,7 +92,7 @@ This data type is useful to us as data analysts because it unlocks a massive amo
 
 As promised, here is how we set up the data frame using the two step method.
 
-Once we read in the dataFrame, we first target the date column and convert it to dateTime structure. 
+Once we read in the dataFrame, we first target the date column and convert it to datetime structure. 
 
 **Here's the code:**
 
@@ -88,12 +100,12 @@ Once we read in the dataFrame, we first target the date column and convert it to
 time_series['Date'] = pd.to_datetime(time_series['Date'])
 
 ```
-This step only converts the column to the datetime64[ns] structure, but doesn't make it the index. We have to do that separately using more code. 
+This step only converts the column to the datetime64[ns] structure, but doesn't make it the index. We have to do that separately using more code. Also, the date column name within the brackets is case sensitive, something to be mindful of when you're working with your dataFrame columns in the future.
 
-Side note-This method is helfpul to see because it shows you how to act on columns within your dataFrame, useful in many other types of analysis. I use this heavily in my work. 
+Side note-this method is helfpul to see because it shows you how to act on columns within your dataFrame, useful in many other types of analysis. I use this heavily in my work. 
 
 
-Next, we set the date column as the index
+Next, we set the date column as the index.
 
 **Here's the code:**
 
